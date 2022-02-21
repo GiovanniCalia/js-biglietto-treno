@@ -18,11 +18,12 @@ element.innerHTML = `Età passeggero: ${userAge} anni. Chilometri da percorrere:
 if (userAge > 17){
     let prezzofinale = (userKilometerTraveled * PrezzoAlKm) - (userKilometerTraveled * PrezzoAlKm * 0.2);
     element2.innerHTML = `Il prezzo del biglietto è ${prezzofinale}€`;
-    console.log(prezzofinale);
-} else if (userAge < 65){
+} else if (userAge > 65){
+    let prezzofinale = (userKilometerTraveled * PrezzoAlKm) - (userKilometerTraveled * PrezzoAlKm * 0.4);
+    element2.innerHTML = `Il prezzo del biglietto è ${prezzofinale}€`;
+} else {
     let prezzofinale = (userKilometerTraveled * PrezzoAlKm);
     element2.innerHTML = `Il prezzo del biglietto è ${prezzofinale}€`;
-    console.log(prezzofinale);
 }
 
 
