@@ -10,19 +10,19 @@ if (isNaN(userAge)){
     alert(`We need a number`)
 }
 
-/*let userTicketCost = parseInt(prompt ("prezzo biglietto"));
-if (isNaN(userTicketCost)){
-    alert(`We need a number`)
-}*/
+let element = document.getElementById("text_output")
+let element2 = document.getElementById("text_output2");
 
-let element = document.getElementById("content");
+element.innerHTML = `Età passeggero: ${userAge} anni. Chilometri da percorrere: ${userKilometerTraveled} km.`;
 
-/*element.innerHTML = `Età passeggero: ${userAge} anni. Chilometri da percorrere: ${userKilometerTraveled} km.`;*/
-
-
-if (userAge > 18){
-    let prezzofinale = ( userKilometerTraveled * PrezzoAlKm) - 20 * 100;
-    document.getElementById("content").innerHTML = `Il prezzo del biglietto è + ${prezzofinale;}`;
+if (userAge > 17){
+    let prezzofinale = (userKilometerTraveled * PrezzoAlKm) - (userKilometerTraveled * PrezzoAlKm * 0.2);
+    element2.innerHTML = `Il prezzo del biglietto è ${prezzofinale}€`;
+    console.log(prezzofinale);
+} else if (userAge < 65){
+    let prezzofinale = (userKilometerTraveled * PrezzoAlKm);
+    element2.innerHTML = `Il prezzo del biglietto è ${prezzofinale}€`;
+    console.log(prezzofinale);
 }
 
 
